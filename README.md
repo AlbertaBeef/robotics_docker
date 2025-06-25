@@ -2,7 +2,7 @@
 
 Docker container scripts for ROS2 development.
 
-Contents of docker image:
+Contents of Docker image:
 - Ubuntu 24.04 (Noble)
 - ROS2 (Jazzy)
 - Gazebo (Harmonic)
@@ -28,26 +28,34 @@ Additional content:
 - git clone https://github.com/AlbertaBeef/robotics_docker
 
 
-## Building the docker image
+## Building the Docker image
 
-To build the docker image locally:
+The pre-built Docker image can be accessed on Docker Hub:
+- https://hub.docker.com/repository/docker/albertabeef/robotics_docker
+
+If you prefer to build the Docker image locally,
+
+Start by downloading the following archive to the "robotics_docker" directory:
+- gazebo_models.zip : https://drive.google.com/uc?export=download&id=1tcfoLFReEW1XNHPUAeLpIz2iZXqQBvo_
+
+Then launch the Docker build script as follows:
 - cd robotics_docker/docker
 - source ./build.sh
 
-Pre-built docker images located here:
-- https://hub.docker.com/repository/docker/albertabeef/robotics_docker
 
+## Launching the Docker image
 
-## Launching the docker image
-
-If not done so already, build docker image, or download:
+If not done so already, build Docker image, or download the image from Docker Hub:
 - docker pull albertabeef/robotics_docker:latest
 
-Launch docker image using compose functionnality:
+Create a directory for shared content, and indicate its location in the following file:
+- robotics_docker/compose/docker-compose.yaml 
+
+Launch Docker image using compose functionnality:
 - cd robotics_docker/compose
 - docker compose up -d robotics_demo
 
-Making the local host's GUI available to the docker image:
+Making the local host's GUI available to the Docker image:
 - xhost +
 - docker compose exec robotics_demo bash
 
@@ -81,7 +89,7 @@ Automatic Addison on-line Tutorials:
    - https://github.com/automaticaddison/yahboom_rosmaster   
 
 MOGI-ROS on-line Tutorials:
-   - https://github.com/MOGI-ROS/Week-1-2-ROS2-basics
+   - https://github.com/MOGI-ROS/Week-1-2-Introduction-to-ROS2
    - https://github.com/MOGI-ROS/Week-3-4-Gazebo-basics
    - https://github.com/MOGI-ROS/Week-5-6-Gazebo-sensors
    - https://github.com/MOGI-ROS/Week-7-8-ROS2-Navigation
