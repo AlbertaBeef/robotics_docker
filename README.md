@@ -36,7 +36,7 @@ The pre-built Docker image can be accessed on Docker Hub:
 If you prefer to build the Docker image locally,
 
 Start by downloading the following archive to the "robotics_docker" directory:
-- gazebo_models.zip : https://drive.google.com/uc?export=download&id=1tcfoLFReEW1XNHPUAeLpIz2iZXqQBvo_
+- gazebo_models.zip [Google Drive](https://drive.google.com/uc?export=download&id=1tcfoLFReEW1XNHPUAeLpIz2iZXqQBvo_)
 
 Then launch the Docker build script as follows:
 - cd robotics_docker/docker
@@ -49,7 +49,7 @@ If not done so already, build Docker image, or download the image from Docker Hu
 - docker pull albertabeef/robotics_docker:latest
 
 Create a directory for shared content, and indicate its location in the following file:
-- robotics_docker/compose/docker-compose.yaml 
+- robotics_docker/compose/docker-compose.yml 
 
 Launch Docker image using compose functionnality:
 - cd robotics_docker/compose
