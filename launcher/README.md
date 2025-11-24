@@ -5,11 +5,9 @@
 
 ## Instructions
 - Clone the robotics docker:
-```git clone https://github.com/zebular13/robotics_docker.git```
+```git clone https://github.com/AlbertaBeef/robotics_docker.git```
 - Open the launcher folder:
 ```cd robotics_docker/launcher```
-
-- Edit ```launch_robotics_demo.sh``` to include your board's IP address on **line 9**
 
 - Run the launcher:
 
@@ -23,7 +21,7 @@ You can now:
 
 ![alt text](robotics_icon.png)
 
-2. Run it directly: ```~/launch_robotics_demo.sh"```
+2. Run it directly: ```~/launch_docker.sh"```
 
 While running, it will open a second terminal to launch the ROS demo Part 2 (this launches the Gazebo simulation running on the Host PC).
 
