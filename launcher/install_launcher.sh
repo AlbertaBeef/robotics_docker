@@ -40,6 +40,20 @@ fi
 echo "Updating desktop database..."
 update-desktop-database ~/.local/share/applications/
 
+# 5. Mark the launcher as trusted
+echo "Marking launcher as trusted..."
+gio set ~/.local/share/applications/RoboticsDemo.desktop metadata::trusted true
+
+# 6. Copy the launcher to the Desktop
+#    This is the key step to make it appear on the desktop itself.
+echo "Creating desktop shortcut..."
+if [ -d "$HOME/Desktop" ]; then
+    cp ~/.local/share/applications/RoboticsDemo.desktop $HOME/Desktop/
+    gio set $HOME/Desktop/RoboticsDemo.desktop metadata::trusted true
+    echo "✓ Desktop shortcut created. You may need to 'Allow Launching' on first click."
+else
+    echo "  (Could not find ~/Desktop directory, skipping shortcut creation.)"
+fi
 echo ""
 echo "✓ Installation complete!"
 echo ""
