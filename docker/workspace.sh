@@ -90,6 +90,26 @@ colcon build
 source install/setup.bash
 
 #
+# LeRobot ROS2 packages
+#
+
+# Install extra dependencies
+pip3 install deepdiff serial feetech-servo-sdk
+
+# Create common directory for so101 and lekiwi packages
+mkdir /root/ros2_ws/src/lerobot
+
+echo "Cloning SO-101 ROS2 package ..."
+cd /root
+git clone https://github.com/AlbertaBeef/Lerobot_ros2
+cp -r /root/Lerobot_ros2/src/* /root/ros2_ws/src/lerobot/.
+
+echo "Cloning LeKiwi ROS2 package ..."
+cd /root
+git clone https://github.com/AlbertaBeef/lekiwi_ros2
+cp -r /root/lekiwi_ros2/src/* /root/ros2_ws/src/lerobot/.
+
+#
 # Hand Controller
 #
 
