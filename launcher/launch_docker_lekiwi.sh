@@ -5,7 +5,7 @@ BASE_DIR="/home/$USER"
 REPO_DIR="$BASE_DIR/robotics_docker"
 SHARED_DIR="$BASE_DIR/shared"
 
-DOCKER_TAG="robotics_demo_20251229"
+DOCKER_TAG="robotics_demo_20251230"
 
 # Install sshpass if not already installed
 if ! command -v sshpass &> /dev/null; then
@@ -30,6 +30,12 @@ if [ ! -d "$REPO_DIR" ]; then
     if [ ! -d "$SHARED_DIR" ]; then
         echo "Creating shared directory..."
         mkdir -p "$SHARED_DIR"
+    fi
+    
+    # Create ros_domain_id.txt (if not present)
+    if [ ! -f "$SHARED_DIR/ros_domain_id.txt" ]; then
+        echo "Creating ros_domain_id.txt in shared directory..."
+        echo "0" > $SHARED_DIR/ros_domain_id.txt
     fi
 else
     echo "Repository already exists at $REPO_DIR"

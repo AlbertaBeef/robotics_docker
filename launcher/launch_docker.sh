@@ -31,6 +31,12 @@ if [ ! -d "$REPO_DIR" ]; then
         echo "Creating shared directory..."
         mkdir -p "$SHARED_DIR"
     fi
+
+    # Create ros_domain_id.txt (if not present)
+    if [ ! -f "$SHARED_DIR/ros_domain_id.txt" ]; then
+        echo "Creating ros_domain_id.txt in shared directory..."
+        echo "0" > $SHARED_DIR/ros_domain_id.txt
+    fi    
 else
     echo "Repository already exists at $REPO_DIR"
 fi

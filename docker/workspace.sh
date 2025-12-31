@@ -102,7 +102,7 @@ mkdir /root/ros2_ws/src/lerobot
 echo "Cloning SO-101 ROS2 package ..."
 cd /root
 git clone https://github.com/AlbertaBeef/Lerobot_ros2
-cp -r /root/Lerobot_ros2/src/* /root/ros2_ws/src/lerobot/.
+cp -r /root/Lerobot_ros2/src/so101_* /root/ros2_ws/src/lerobot/.
 
 echo "Cloning LeKiwi ROS2 package ..."
 cd /root
