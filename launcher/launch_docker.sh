@@ -31,14 +31,25 @@ if [ ! -d "$REPO_DIR" ]; then
         echo "Creating shared directory..."
         mkdir -p "$SHARED_DIR"
     fi
-
-    # Create ros_domain_id.txt (if not present)
-    if [ ! -f "$SHARED_DIR/ros_domain_id.txt" ]; then
-        echo "Creating ros_domain_id.txt in shared directory..."
-        echo "0" > $SHARED_DIR/ros_domain_id.txt
-    fi    
 else
     echo "Repository already exists at $REPO_DIR"
+fi
+
+# Create persistent storage directory
+echo "Checking for shared directory..."
+if [ ! -d "$SHARED_DIR" ]; then
+    echo "Creating shared directory..."
+    mkdir -p "$SHARED_DIR"
+else
+    echo "shared directory exists..."
+fi
+    
+# Create ros_domain_id.txt (if not present)
+if [ ! -f "$SHARED_DIR/ros_domain_id.txt" ]; then
+    echo "Creating ros_domain_id.txt in shared directory..."
+    echo "0" > $SHARED_DIR/ros_domain_id.txt
+else
+    echo "ros_domain_id.txt exists in shared directory..."
 fi
 
 # Pull the Docker image

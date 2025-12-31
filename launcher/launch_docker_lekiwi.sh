@@ -23,22 +23,26 @@ if [ ! -d "$REPO_DIR" ]; then
     echo "Repository not found. Cloning robotics_docker..."
     cd "$BASE_DIR"
     git clone https://github.com/AlbertaBeef/robotics_docker.git
-    echo "Repository cloned successfully!"
-    
-    # Create persistent storage directory
-    echo "Checking for shared directory..."
-    if [ ! -d "$SHARED_DIR" ]; then
-        echo "Creating shared directory..."
-        mkdir -p "$SHARED_DIR"
-    fi
-    
-    # Create ros_domain_id.txt (if not present)
-    if [ ! -f "$SHARED_DIR/ros_domain_id.txt" ]; then
-        echo "Creating ros_domain_id.txt in shared directory..."
-        echo "0" > $SHARED_DIR/ros_domain_id.txt
-    fi
+    echo "Repository cloned successfully!"    
 else
     echo "Repository already exists at $REPO_DIR"
+fi
+
+# Create persistent storage directory
+echo "Checking for shared directory..."
+if [ ! -d "$SHARED_DIR" ]; then
+    echo "Creating shared directory..."
+    mkdir -p "$SHARED_DIR"
+else
+    echo "shared directory exists..."
+fi
+    
+# Create ros_domain_id.txt (if not present)
+if [ ! -f "$SHARED_DIR/ros_domain_id.txt" ]; then
+    echo "Creating ros_domain_id.txt in shared directory..."
+    echo "0" > $SHARED_DIR/ros_domain_id.txt
+else
+    echo "ros_domain_id.txt exists in shared directory..."
 fi
 
 # Pull the Docker image
@@ -66,7 +70,7 @@ echo "Launching the demo in new terminal..."
 # Launch Part 2 demo in a new terminal window
 gnome-terminal --title="ROS2 Demo Part 2" -- bash -c "
 docker compose -f $REPO_DIR/compose/docker-compose.yml exec robotics_demo bash -ic '
-ros2 launch hand_controller demo13_lekiwi_part2.launch.py use_imshow:=False
+ros2 launch hand_controller demo13_lekiwi_part2.launch.py use_imshow:=True
 '; exec bash"
 
 
