@@ -94,7 +94,7 @@ source install/setup.bash
 #
 
 # Install extra dependencies
-pip3 install deepdiff serial feetech-servo-sdk
+pip3 install deepdiff feetech-servo-sdk
 
 # Create common directory for so101 and lekiwi packages
 mkdir /root/ros2_ws/src/lerobot
