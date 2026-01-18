@@ -135,7 +135,7 @@ if [ ! -d "hand_controller" ]; then
     source ./get_pytorch_models.sh
     cd ../../..
     # Remove Edge Impulse models for qcs6490 host
-    rm hands-v2-*-qnn-*.eim
+    #rm hands-v2-*-qnn-*.eim
     # Download Edge Impulse models for x86 host
     cd /root/hand_controller
     wget -O hands-v2-yolov5-linux-x86.eim "https://github.com/zebular13/hand_controller/releases/download/Flask_QIRP1.4/hands-v2-linux-x86.eim"
@@ -207,7 +207,11 @@ source install/setup.bash
 
 # Unzip gazebo models
 cd /root
-unzip gazebo_models.zip
+#unzip gazebo_models.zip
+unzip Depot_tria.zip
+
+# Replace mogiros world.sdf with version from Depot_tria.zip
+#cp /root/Depot_tria/world.sdf /root/ros2_ws/src/mogiros/Week-3-4-Gazebo-basics/bme_gazebo_basics/worlds/world.sdf
 
 #
 # LLM-based content

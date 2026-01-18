@@ -5,7 +5,7 @@ BASE_DIR="/home/$USER"
 REPO_DIR="$BASE_DIR/robotics_docker"
 SHARED_DIR="$BASE_DIR/shared"
 
-DOCKER_TAG="robotics_demo_20260107"
+DOCKER_TAG="robotics_demo_20260117"
 
 # Install sshpass if not already installed
 if ! command -v sshpass &> /dev/null; then
@@ -70,7 +70,7 @@ echo "Launching the demo in new terminal..."
 # Launch Part 2 demo in a new terminal window
 gnome-terminal --title="ROS2 Demo Part 2" -- bash -c "
 docker compose -f $REPO_DIR/compose/docker-compose.yml exec robotics_demo bash -ic '
-ros2 launch hand_controller demo13_lekiwi_part2.launch.py use_imshow:=True
+ros2 launch hand_controller demo13_lekiwi_part2.launch.py use_imshow:=True model:=/root/Depot_tria/world.sdf
 '; exec bash"
 
 

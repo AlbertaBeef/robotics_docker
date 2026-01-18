@@ -17,6 +17,12 @@ ROS_WS="/root/ros2_ws"
 # SHARED_ROS2 is the path to shared ROS 2 files
 SHARED_ROS2="/root/shared/ros2"
 
+if [ ! -d "$SHARED_ROS2" ]; then
+    # If the directory doesn't exist, create it
+    mkdir $SHARED_ROS2
+    echo "Created $SHARED_ROS2 directory ..."
+fi
+
 # Create ros_domain_id.txt file with default value 0 if it doesn't exist
 # This file stores the ROS_DOMAIN_ID, which is used for multi-robot communication
 ROS_DOMAIN_ID_FILE="$SHARED_ROS2/ros_domain_id.txt"

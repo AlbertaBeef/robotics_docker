@@ -103,9 +103,10 @@ RUN apt-get install -y \
     tree \
     meld
     
-# Install additional ROS 2 packages for Yahboom ROSMASTER-X3
-COPY ./gazebo_models.zip /root/
-    
+# Install additional Gazebo simulation artifacts
+#COPY ./gazebo_models.zip /root/
+COPY ./Depot_tria.zip /root/ 
+
 # Install Mesa graphics drivers
 # Mesa is an open-source implementation of OpenGL and other graphics APIs
 # It's crucial for 3D rendering in many applications, including RViz in ROS
@@ -149,7 +150,8 @@ RUN ./workspace.sh
 RUN echo "source /root/ros2_ws/install/setup.bash" >> /root/.bashrc
 
 # Ensure the gazebo models are accessible in every new shell
-RUN echo "export GZ_SIM_RESOURCE_PATH=/root/gazebo_models" >> /root/.bashrc
+#RUN echo "export GZ_SIM_RESOURCE_PATH=/root/gazebo_models" >> /root/.bashrc
+RUN echo "export GZ_SIM_RESOURCE_PATH=/root/Depot_tria/gazebo_models" >> /root/.bashrc
 
 # Set the entrypoint for the container
 # This script will be run every time the container starts
