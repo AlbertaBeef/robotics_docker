@@ -242,34 +242,34 @@ apt install -y ros-$ROS_DISTRO-ur-simulation-gz
 
 # Install RAI
 #   reference : https://robotecai.github.io/rai/setup/install/
-curl -sSL https://install.python-poetry.org | python3 -
-echo 'export PATH=~/.local/bin:$PATH' >> /root/.bashrc
+#curl -sSL https://install.python-poetry.org | python3 -
+#echo 'export PATH=~/.local/bin:$PATH' >> /root/.bashrc
 #
-cd /root
-git clone https://github.com/RobotecAI/rai.git
+#cd /root
+#git clone https://github.com/RobotecAI/rai.git
 #
-cd /root/rai
-vcs import < ros_deps.repos
+#cd /root/rai
+#vcs import < ros_deps.repos
 #
-cd /root/rai
-/root/.local/bin/poetry install
-/root/.local/bin/poetry install --all-groups
+#cd /root/rai
+#/root/.local/bin/poetry install
+#/root/.local/bin/poetry install --all-groups
 #
-cd /root/rai
-rosdep install --from-paths src --ignore-src -r -y
+#cd /root/rai
+#rosdep install --from-paths src --ignore-src -r -y
 #
-cd /root/rai
-pip3 install empy
-pip3 install catkin_pkg
-colcon build --symlink-install
-source ~/rai/install/setup.bash 
-echo 'source ~/rai/install/setup.bash' >> /root/.bashrc
+#cd /root/rai
+#pip3 install empy
+#pip3 install catkin_pkg
+#colcon build --symlink-install
+#source ~/rai/install/setup.bash 
+#echo 'source ~/rai/install/setup.bash' >> /root/.bashrc
 #
-cd /root/rai
-apt-get install -y zip
-./scripts/download_demo.sh manipulation
-./scripts/download_demo.sh rosbot
-./scripts/download_demo.sh agriculture
+#cd /root/rai
+#apt-get install -y zip
+#./scripts/download_demo.sh manipulation
+#./scripts/download_demo.sh rosbot
+#./scripts/download_demo.sh agriculture
 
 
  
