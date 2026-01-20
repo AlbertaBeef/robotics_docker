@@ -8,10 +8,12 @@ Contents of Docker image:
 - Gazebo (Harmonic)
 
 Additional content:
-- MoveIt2
-    - built from source, for moveit_py package
-- ASL Controller
-   - https://github.com/AlbertaBeef/asl_mediapipe_pointnet
+- Hand Controller
+   - https://github.com/AlbertaBeef/hand_controller
+- LeRobot SO-101 support
+   - https://github.com/AlbertaBeef/Lerobot_ros2
+- LeRobot LeKiwi support
+   - https://github.com/AlbertaBeef/lekiwi_ros2
 - MOGI-ROS simulation
    - https://github.com/MOGI-ROS/mogi_trajectory_server
    - https://github.com/MOGI-ROS/Week-3-4-Gazebo-basics
@@ -37,6 +39,7 @@ If you prefer to build the Docker image locally,
 
 Start by downloading the following archive to the "robotics_docker" directory:
    - gazebo_models.zip [Google Drive](https://drive.google.com/uc?export=download&id=1tcfoLFReEW1XNHPUAeLpIz2iZXqQBvo_)
+   - Depot_tria.zip (https://github.com/AlbertaBeef/robotics_docker/releases/download/robotics_demo_20260119/Depot_tria.zip)
 
 Then launch the Docker build script as follows:
    - cd robotics_docker/docker
