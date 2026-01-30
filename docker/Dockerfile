@@ -60,7 +60,11 @@ RUN apt-get install -y \
     ros-${ROS_DISTRO}-twist-stamper
 
 # Install mediapipe
-RUN pip install mediapipe
+#RUN pip install mediapipe
+# Fails for new 0.10.32 version ...
+# ERROR: Cannot uninstall numpy 1.26.4, RECORD file not found. Hint: The package was installed by debian.
+# Stick to working 0.10.31 version ...
+RUN pip install mediapipe==0.10.31
 # Install pytorch (default)
 RUN pip install torch
 # Install pytorch (CUDA 12.8)
