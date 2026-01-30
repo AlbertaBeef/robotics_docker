@@ -5,7 +5,7 @@ BASE_DIR="/home/$USER"
 REPO_DIR="$BASE_DIR/robotics_docker"
 SHARED_DIR="$BASE_DIR/shared"
 
-DOCKER_TAG="robotics_demo_20260119"
+DOCKER_TAG="robotics_demo_20260130"
 
 # Install sshpass if not already installed
 if ! command -v sshpass &> /dev/null; then
